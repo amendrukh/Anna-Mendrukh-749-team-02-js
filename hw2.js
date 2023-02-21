@@ -37,3 +37,33 @@ const min = (arr, toReturn, minArr = Math.min(...arr)) =>
 
 console.log(min([1, 2, 3, 4, 5], 'value'));
 console.log(min([1, 2, 3, 4, 5], 'index'));
+
+const squareDigits = (num) => {
+    const array = num.toString().split("").map((el) => Number( el * el));
+    return  Number(array.join(""));
+}
+
+squareDigits(1256)
+
+function findOutlier(integers) {
+    let odd = [];
+    let even = [];
+    integers.forEach((el) => {
+        if (el % 2 === 0) {
+            odd.push(el)
+            console.log(`Odd: ${odd}`)
+        } else {
+            even.push(el);
+            console.log(`Even: ${even}`)
+        }
+    })
+    console.log(`Odd: ${odd}`)
+    if (odd.length === 1) {
+        return odd[0]
+    } else {
+        return odd[0]
+    }
+}
+
+console.log(findOutlier([0, 1, 2]));//1
+console.log(findOutlier([1, 2, 3]));//2
